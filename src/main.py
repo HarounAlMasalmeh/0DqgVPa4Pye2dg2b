@@ -11,14 +11,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A simple command line arguments parser")
 
     parser.add_argument("-d", "--data", type=str, default="../data/raw/images/", help="data folder path")
-    parser.add_argument("-n", "--name", type=str, default="../notebooks/MonReader.h5", help="data folder path")
+    parser.add_argument("-m", "--model", type=str, default="../notebooks/MonReader.h5", help="Pre-trained model path")
 
     args = parser.parse_args()
 
     print(args)
 
     data_file_path = args.data
-    model_name = args.name
+    model_name = args.model
 
     training_data_path, testing_data_path = data_file_path + "/training", data_file_path + "/testing"
 
