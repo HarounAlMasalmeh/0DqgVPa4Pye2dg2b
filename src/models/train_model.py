@@ -37,7 +37,6 @@ def train_custom_model(model_name, train_generator, validation_generator, image_
 
 
 def train_resnet_model(model_name, train_generator, validation_generator, image_height=224, image_width=224):
-    height, width = 224, 224
     base_model = tf.keras.applications.ResNet50(weights='imagenet', include_top=False,
                                                 input_shape=(image_height, image_width, 3))
 
@@ -73,7 +72,6 @@ def train_resnet_model(model_name, train_generator, validation_generator, image_
 
 
 def train_mobilenet_model(model_name, train_generator, validation_generator, image_height=224, image_width=224):
-    height, width = 224, 224
     # Load the pre-trained MobileNet model without the top layers
     base_model = tf.keras.applications.MobileNet(weights='imagenet', include_top=False,
                                                  input_shape=(image_height, image_width, 3))
